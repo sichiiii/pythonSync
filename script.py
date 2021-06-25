@@ -9,7 +9,15 @@ driver.get('https://t.me/s/durov')
 
 driver.set_window_size(10000, 10000)
 
-ele = driver.find_element_by_xpath('/html/body/main/div/section/div[19]/div[1]')
+
+
+for i in range(1, 100):
+    try:
+        ele = driver.find_element_by_xpath(f'/html/body/main/div/section/div[{i}]' + '/div[1]/div[2]')
+    except:
+        i = i-1
+        ele = driver.find_element_by_xpath(f'/html/body/main/div/section/div[{i}]' + '/div[1]/div[2]')
+        break
 ele.screenshot('image.png')
 
 #eleWidth = ele.size['width']
