@@ -7,6 +7,7 @@ db = SQLAlchemy(app)
 
 if __name__ == "__main__":
     
+
     from routes import *
 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
